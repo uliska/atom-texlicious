@@ -108,7 +108,7 @@ class TeXlicious
       return
 
     @texEditor = activeTextEditor
-    console.log @texEditor
+    console.log "texEditor: " + @texEditor
 
   isTex: ->
     activeFile = atom.workspace.getActiveTextEditor().getPath()
