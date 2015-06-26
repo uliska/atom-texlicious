@@ -27,7 +27,7 @@ class Latexmk
     program = atom.config.get('texlicious.texFlavor')
     outputDirectory = atom.config.get('texlicious.outputDirectory')
 
-    latexmkArgs.shellEscape = '-bibtex' if bibtexEnabled
+    latexmkArgs.bibtex = '-bibtex' if bibtexEnabled
     latexmkArgs.shellEscape = '-shell-escape' if shellEscapeEnabled
     latexmkArgs.synctex = '-synctex=1' if synctexEnabled
     latexmkArgs.program = "-#{program}" if program? and program isnt 'pdflatex'

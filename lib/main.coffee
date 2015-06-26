@@ -142,6 +142,8 @@ class TeXlicious
       @texFile = mergedArgs.root
 
       args.push mergedArgs.default
+      if mergedArgs.bibtex?
+        args.push mergedArgs.bibtex
       if mergedArgs.synctex?
         args.push mergedArgs.synctex
       if mergedArgs.program?
