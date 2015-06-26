@@ -135,6 +135,7 @@ class TeXlicious
     args = []
 
     if @getTexEditor not null
+      console.log @getTexEditor
       latexmkArgs = @latexmk.args @texEditor.getPath()
       magicComments = @magicComments.getMagicComments @texEditor.getPath()
       mergedArgs = extend(true, latexmkArgs, magicComments)
@@ -150,7 +151,7 @@ class TeXlicious
       if mergedArgs.outdir?
         args.push mergedArgs.outdir
       args.push mergedArgs.root
-
+      console.log args
       args
 
   # TODO: Update editor gutter when file is opened.

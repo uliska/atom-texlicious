@@ -8,6 +8,7 @@ class Latexmk
     @texliciousCore = params.texliciousCore
 
   make: (args, options, callback) ->
+    console.log args
     command = "latexmk #{args.join(' ')}"
     proc = exec command, options, (error, stdout, stderr) ->
       if error?
