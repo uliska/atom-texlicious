@@ -172,6 +172,7 @@ class TeXlicious
   compile: ->
     @saveAll()
     args = @makeArgs()
+    console.log args
     options = @processManager.options()
     proc = @latexmk.make args, options, (exitCode) =>
       switch exitCode

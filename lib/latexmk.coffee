@@ -27,12 +27,18 @@ class Latexmk
     synctexEnabled = atom.config.get('texlicious.synctexEnabled')
     program = atom.config.get('texlicious.texFlavor')
     outputDirectory = atom.config.get('texlicious.outputDirectory')
-
+    console.log latexmkArgs
     latexmkArgs.bibtex = '-bibtex' if bibtexEnabled
+    console.log latexmkArgs
     latexmkArgs.shellEscape = '-shell-escape' if shellEscapeEnabled
+    console.log latexmkArgs
     latexmkArgs.synctex = '-synctex=1' if synctexEnabled
+    console.log latexmkArgs
     latexmkArgs.program = "-#{program}" if program? and program isnt 'pdflatex'
+    console.log latexmkArgs
     latexmkArgs.outdir = "-outdir=\"#{path.join(@texliciousCore.getTexProjectRoot(), outputDirectory)}\"" if outputDirectory isnt ''
+    console.log latexmkArgs
     latexmkArgs.root = "\"#{texFile}\""
+    console.log latexmkArgs
 
     latexmkArgs
