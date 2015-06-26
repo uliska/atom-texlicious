@@ -19,15 +19,21 @@ class Latexmk
     proc
 
   args: (texFile) ->
+    console.log "latexmk.args"
     latexmkArgs = {
       default: '-interaction=nonstopmode -f -cd -pdf -file-line-error'
     }
 
     bibtexEnabled = atom.config.get('texlicious.bibtexEnabled')
+    console.log "bibtexEnabled"
     shellEscapeEnabled = atom.config.get('texlicious.shellEscapeEnabled')
+    console.log "shellEscapeEnabled"
     synctexEnabled = atom.config.get('texlicious.synctexEnabled')
+    console.log "synctexEnabled"
     program = atom.config.get('texlicious.texFlavor')
+    console.log "program"
     outputDirectory = atom.config.get('texlicious.outputDirectory')
+    console.log "outputDirectory"
     console.log latexmkArgs
     latexmkArgs.bibtex = '-bibtex' if bibtexEnabled
     console.log latexmkArgs
